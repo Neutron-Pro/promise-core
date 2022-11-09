@@ -1,0 +1,4 @@
+rootProject.name = 'promise-core'
+include ':promise-api'
+project(':promise-api').projectDir = new File(ext.getProperty('promise_api_dir'));
+

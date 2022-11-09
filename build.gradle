@@ -1,0 +1,14 @@
+plugins {
+    id 'java'
+}
+
+group 'fr.neutronstars'
+version '1.0-SNAPSHOT'
+
+repositories {
+
+}
+
+dependencies {
+    implementation project(':promise-api')
+}
