@@ -6,9 +6,9 @@ group 'fr.neutronstars'
 version '1.0-SNAPSHOT'
 
 repositories {
-
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
-    implementation project(':promise-api')
+    implementation 'com.github.Neutron-Pro:promise-api:1.0.0'
 }
