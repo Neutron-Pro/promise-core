@@ -145,7 +145,11 @@ class ImplPromise<T> implements Promise<T>
             fulfillment = new ImplFulfillment<>();
             try {
                 this.resolver.resolve(fulfillment);
-                while (!fulfillment.completed());
+                while (true) {
+                    if (fulfillment.completed()) {
+                        break;
+                    }
+                }
             } catch (Throwable throwable) {
                 fulfillment.reject(throwable);
             }
