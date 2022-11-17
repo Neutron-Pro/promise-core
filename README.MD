@@ -60,7 +60,7 @@ System.out.println(x); // Output: 5
 
 ```java
 service.of(resolver -> resolver.reject(new RuntimeException("An error has occured")))
-    .catch(System.err::println) // Output: "This is a test!"
+    .catch(System.err::println) // Output: "RuntimeException: An error has occured"
     .async();
 ```
 
