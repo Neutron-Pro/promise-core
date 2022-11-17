@@ -60,7 +60,7 @@ System.out.println(x); // Output: 5
 
 ```java
 service.of(resolver -> resolver.reject(new RuntimeException("An error has occured")))
-    .catch(System.err::println) // Output: "RuntimeException: An error has occured"
+    .error(System.err::println) // Output: "RuntimeException: An error has occured"
     .async();
 ```
 
@@ -132,7 +132,7 @@ service.any(
     service.of(resolver.reject(new RuntimeException("Promise 3")))
 )
 .then(System.out::println)
-.catch(System.err::println)
+.error(System.err::println)
 .async();
 
 // Output: then -> Promise 2
@@ -156,7 +156,7 @@ service.race(
     service.of(resolver.reject(new RuntimeException("Promise 3")))
 )
 .then(System.out::println)
-.catch(System.err::println)
+.error(System.err::println)
 .async();
 
 // Output: catch -> Promise 3
